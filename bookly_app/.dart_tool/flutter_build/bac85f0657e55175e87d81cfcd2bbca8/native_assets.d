@@ -1,0 +1,1 @@
+ F:\\FlutterProjects\\2-Level_Two_Projects\\bookly_app\\.dart_tool\\flutter_build\\bac85f0657e55175e87d81cfcd2bbca8\\native_assets.yaml: 
