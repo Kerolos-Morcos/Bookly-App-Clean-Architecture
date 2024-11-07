@@ -13,22 +13,22 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:2:1-62
-15-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:2:18-60
+15-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:2:1-62
+15-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:2:18-60
 16    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> <!-- Provide required visibility configuration for API level 30 and above -->
-16-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:3:1-72
-16-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:3:18-70
+16-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:3:1-72
+16-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:3:18-70
 17    <queries>
-17-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:5:1-10:11
+17-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:5:1-10:11
 18        <intent>
-18-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:6:3-9:12
+18-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:6:3-9:12
 19            <action android:name="android.intent.action.VIEW" />
-19-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:7:5-57
-19-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:7:13-54
+19-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:7:5-57
+19-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:7:13-54
 20
 21            <data android:scheme="https" />
-21-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:8:5-36
-21-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:8:11-33
+21-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:8:5-36
+21-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:8:11-33
 22        </intent>
 23    </queries>
 24    <!--
@@ -39,12 +39,12 @@
 29         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
 30    -->
 31    <queries>
-31-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:5:1-10:11
+31-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:5:1-10:11
 32        <intent>
 33            <action android:name="android.intent.action.PROCESS_TEXT" />
 34
 35            <data android:mimeType="text/plain" />
-35-->F:\FlutterProjects\2-Level_Two_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:8:5-36
+35-->F:\FlutterProjects\3-Level_Three_Projects\bookly_app\android\app\src\main\AndroidManifest.xml:8:5-36
 36        </intent>
 37    </queries>
 38
@@ -102,13 +102,13 @@
 84            android:value="2" />
 85
 86        <activity
-86-->[:url_launcher_android] F:\FlutterProjects\2-Level_Two_Projects\bookly_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+86-->[:url_launcher_android] F:\FlutterProjects\3-Level_Three_Projects\bookly_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
 87            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-87-->[:url_launcher_android] F:\FlutterProjects\2-Level_Two_Projects\bookly_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+87-->[:url_launcher_android] F:\FlutterProjects\3-Level_Three_Projects\bookly_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
 88            android:exported="false"
-88-->[:url_launcher_android] F:\FlutterProjects\2-Level_Two_Projects\bookly_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+88-->[:url_launcher_android] F:\FlutterProjects\3-Level_Three_Projects\bookly_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
 89            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-89-->[:url_launcher_android] F:\FlutterProjects\2-Level_Two_Projects\bookly_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+89-->[:url_launcher_android] F:\FlutterProjects\3-Level_Three_Projects\bookly_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
 90
 91        <uses-library
 91-->[androidx.window:window:1.2.0] C:\Users\Studio\.gradle\caches\transforms-3\ac5ea9a8b6fd31385d98c2d53414b07d\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
