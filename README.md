@@ -1,6 +1,6 @@
 # bookly_app
 
-My eleventh Flutter project in my learning process..
+My eleventh Flutter clean architecture project in my learning process..
 
 ## Getting Started
 
