@@ -1,0 +1,1 @@
+ F:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\.dart_tool\\flutter_build\\24858a888a1866a258d8569f1777debc\\native_assets.yaml: 

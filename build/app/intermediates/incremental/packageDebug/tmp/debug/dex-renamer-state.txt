@@ -1,9 +1,9 @@
-#Sat Nov 02 17:46:17 EET 2024
-base.0=F\:\\FlutterProjects\\2-Level_Two_Projects\\bookly_app\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=F\:\\FlutterProjects\\2-Level_Two_Projects\\bookly_app\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.2=F\:\\FlutterProjects\\2-Level_Two_Projects\\bookly_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.3=F\:\\FlutterProjects\\2-Level_Two_Projects\\bookly_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.4=F\:\\FlutterProjects\\2-Level_Two_Projects\\bookly_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+#Sun Nov 10 14:34:25 EET 2024
+base.0=F\:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=F\:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=F\:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=F\:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.4=F\:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

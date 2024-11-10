@@ -4,7 +4,7 @@
             "outputFile": "com.example.bookly_app-mergeDebugResources-26:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "F:\\FlutterProjects\\2-Level_Two_Projects\\bookly_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "F:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
