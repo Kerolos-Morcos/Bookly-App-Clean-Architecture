@@ -31,7 +31,8 @@ class ServerFailure extends Failure {
 
       case DioExceptionType.connectionError:
         return ServerFailure(
-            errorMessage: 'Request with ApiServer has a connection error, please check your connection!');
+            errorMessage:
+                'Request with ApiServer has a connection error, please check your connection!');
 
       case DioExceptionType.unknown:
         if (dioException.message!.contains('SocketException')) {

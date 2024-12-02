@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/service_locator.dart';
-import 'package:bookly_app/features/home/data/repos/home_repo_implementation.dart';
+import 'package:bookly_app/features/home/domain/repos/home_repo.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/simple_bloc_observer.dart';
@@ -23,12 +23,12 @@ class BooklyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
-            getIt.get<HomeRepoImplementation>(),
+            getIt.get<HomeRepo>(),
           )..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(
-            getIt.get<HomeRepoImplementation>(),
+            getIt.get<HomeRepo>(),
           )..fetchNewestBooks(),
         ),
       ],
