@@ -42,7 +42,11 @@ class HomeRepoImplementation extends HomeRepo {
       final remoteBooks = await remoteFetch();
       return Right(remoteBooks);
     } catch (e) {
-      return Left(Failure(errorMessage: e.toString()));
+      return Left(
+        ServerFailure(
+          errorMessage: e.toString(),
+        ),
+      );
     }
   }
 }
