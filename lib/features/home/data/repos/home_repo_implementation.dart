@@ -8,34 +8,39 @@ import 'package:dartz/dartz.dart';
 class HomeRepoImplementation extends HomeRepo {
   final HomeRemoteDataSource homeRemoteDataSource;
   final HomeLocalDataSource homeLocalDataSource;
+
   HomeRepoImplementation({
     required this.homeRemoteDataSource,
     required this.homeLocalDataSource,
   });
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() async {
-    try {
-      var booksLocalList = homeLocalDataSource.fetchFeaturedBooks();
-      if (booksLocalList.isNotEmpty) {
-        return Right(booksLocalList);
-      }
-      var booksRemoteList = await homeRemoteDataSource.fetchFeaturedBooks();
-      return Right(booksRemoteList);
-    } catch (e) {
-      return Left(Failure(errorMessage: e.toString()));
-    }
+  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() {
+    return _fetchBooks(
+      localFetch: homeLocalDataSource.fetchFeaturedBooks,
+      remoteFetch: homeRemoteDataSource.fetchFeaturedBooks,
+    );
   }
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() async {
+  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() {
+    return _fetchBooks(
+      localFetch: homeLocalDataSource.fetchNewestBooks,
+      remoteFetch: homeRemoteDataSource.fetchNewestBooks,
+    );
+  }
+
+  Future<Either<Failure, List<BookEntity>>> _fetchBooks({
+    required List<BookEntity> Function() localFetch,
+    required Future<List<BookEntity>> Function() remoteFetch,
+  }) async {
     try {
-      var boxLocalList = homeLocalDataSource.fetchNewestBooks();
-      if (boxLocalList.isNotEmpty) {
-        return Right(boxLocalList);
+      final localBooks = localFetch();
+      if (localBooks.isNotEmpty) {
+        return Right(localBooks);
       }
-      var boxRemoteList = await homeRemoteDataSource.fetchNewestBooks();
-      return Right(boxRemoteList);
+      final remoteBooks = await remoteFetch();
+      return Right(remoteBooks);
     } catch (e) {
       return Left(Failure(errorMessage: e.toString()));
     }
