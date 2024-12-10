@@ -35,17 +35,15 @@ class HomeRepoImplementation extends HomeRepo {
     required Future<List<BookEntity>> Function() remoteFetch,
   }) async {
     try {
-      final localBooks = localFetch();
-      if (localBooks.isNotEmpty) {
-        return Right(localBooks);
+      List<BookEntity> books = localFetch();
+      if (books.isNotEmpty) {
+        return Right(books);
       }
-      final remoteBooks = await remoteFetch();
-      return Right(remoteBooks);
+      books = await remoteFetch();
+      return Right(books);
     } catch (e) {
       return Left(
-        ServerFailure(
-          errorMessage: e.toString(),
-        ),
+        ServerFailure(errorMessage: e.toString()),
       );
     }
   }
