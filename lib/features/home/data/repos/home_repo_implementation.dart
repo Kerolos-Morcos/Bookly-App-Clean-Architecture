@@ -8,42 +8,57 @@ import 'package:dartz/dartz.dart';
 class HomeRepoImplementation extends HomeRepo {
   final HomeRemoteDataSource homeRemoteDataSource;
   final HomeLocalDataSource homeLocalDataSource;
-
   HomeRepoImplementation({
     required this.homeRemoteDataSource,
     required this.homeLocalDataSource,
   });
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() {
-    return _fetchBooks(
-      localFetch: homeLocalDataSource.fetchFeaturedBooks,
-      remoteFetch: homeRemoteDataSource.fetchFeaturedBooks,
-    );
-  }
-
-  @override
-  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() {
-    return _fetchBooks(
-      localFetch: homeLocalDataSource.fetchNewestBooks,
-      remoteFetch: homeRemoteDataSource.fetchNewestBooks,
-    );
-  }
-
-  Future<Either<Failure, List<BookEntity>>> _fetchBooks({
-    required List<BookEntity> Function() localFetch,
-    required Future<List<BookEntity>> Function() remoteFetch,
-  }) async {
+  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() async {
     try {
-      List<BookEntity> books = localFetch();
+      List<BookEntity> books;
+      books = homeLocalDataSource.fetchFeaturedBooks();
       if (books.isNotEmpty) {
         return Right(books);
       }
-      books = await remoteFetch();
+      books = await homeRemoteDataSource.fetchFeaturedBooks();
+      return Right(books);
+    } catch (e) {
+      return Left(ServerFailure(errorMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() async {
+    try {
+      List<BookEntity> books;
+      books = homeLocalDataSource.fetchNewestBooks();
+      if (books.isNotEmpty) {
+        return Right(books);
+      }
+      books = await homeRemoteDataSource.fetchNewestBooks();
+      return Right(books);
+    } catch (e) {
+      return Left(ServerFailure(errorMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookEntity>>> fetchSimilarBooks(
+      {required String category}) async {
+    try {
+      List<BookEntity> books;
+      books = homeLocalDataSource.fetchSimilarBooks();
+      if (books.isNotEmpty) {
+        return Right(books);
+      }
+      books = await homeRemoteDataSource.fetchSimilarBooks(category: category);
       return Right(books);
     } catch (e) {
       return Left(
-        ServerFailure(errorMessage: e.toString()),
+        ServerFailure(
+          errorMessage: e.toString(),
+        ),
       );
     }
   }

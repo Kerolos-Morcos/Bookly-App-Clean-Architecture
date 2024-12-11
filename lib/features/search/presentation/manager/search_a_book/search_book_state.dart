@@ -7,7 +7,7 @@ final class SearchBookInitial extends SearchBookState {}
 final class SearchBooksLoading extends SearchBookState {}
 
 final class SearchBooksSuccess extends SearchBookState {
-  final List<BookModel> searchBooks;
+  final List<BookEntity> searchBooks;
   SearchBooksSuccess({required this.searchBooks});
 }
 

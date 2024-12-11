@@ -1,14 +1,14 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/core/models/book_model/book_model.dart';
+import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class NewestBooksItem extends StatelessWidget {
-  final BookModel? bookModel;
+  final BookEntity? bookModel;
   const NewestBooksItem({super.key, this.bookModel});
 
   @override
@@ -24,7 +24,7 @@ class NewestBooksItem extends StatelessWidget {
           children: [
             CustomBookImage(
               aspectRatio: 2.4 / 3.4,
-              imageURL: bookModel!.volumeInfo.imageLinks!.thumbnail ??
+              imageURL: bookModel!.image ??
                   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp8tqoFKYU6xOKd9Vj9YB435sViW4g4RbR4g&s',
             ),
             const SizedBox(width: 32),
@@ -35,7 +35,7 @@ class NewestBooksItem extends StatelessWidget {
                 children: [
                   Text(
                     maxLines: 2,
-                    bookModel?.volumeInfo.title ?? 'Book Title',
+                    bookModel?.title ?? 'Book Title',
                     overflow: TextOverflow.ellipsis,
                     style: Styles.subTitleLarge24.copyWith(
                       fontFamily: kGTSectraFine,
@@ -43,7 +43,7 @@ class NewestBooksItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 3),
                   Text(
-                    bookModel?.volumeInfo.authors?[0] ?? 'UNknown author',
+                    bookModel?.authorName ?? 'UNknown author',
                     style: Styles.subTitleSmall17,
                     textAlign: TextAlign.start,
                     overflow: TextOverflow.ellipsis,
@@ -60,8 +60,8 @@ class NewestBooksItem extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       BookRating(
-                        rating: bookModel!.volumeInfo.averageRating ?? 0,
-                        count: bookModel!.volumeInfo.ratingsCount ?? 0,
+                        rating: (bookModel!.rating ?? 0).toDouble(),
+                        count: (bookModel!.ratingsCount ?? 0).toInt(),
                       ),
                     ],
                   ),

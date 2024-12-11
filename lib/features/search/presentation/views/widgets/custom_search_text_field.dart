@@ -1,5 +1,3 @@
-import 'package:bookly_app/core/models/book_model/book_model.dart';
-import 'package:bookly_app/core/models/book_model/volume_info.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/search/presentation/manager/search_a_book/search_book_cubit.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +15,7 @@ class CustomSearchTextField extends StatelessWidget {
       onChanged: (value) {
         if (value.isNotEmpty) {
           context.read<SearchBookCubit>().fetchSearchBooksResult(
-                BookModel(
-                  volumeInfo: VolumeInfo(
-                    title: value,
-                  ),
-                ),
+                value,
               );
         }
       },

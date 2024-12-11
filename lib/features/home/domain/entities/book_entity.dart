@@ -17,6 +17,14 @@ class BookEntity extends HiveObject {
   final num? price;
   @HiveField(6)
   final num? rating;
+  @HiveField(7)
+  final num? ratingsCount;
+  @HiveField(8)
+  final String? category;
+  @HiveField(9)
+  final String? previewLink;
+  @HiveField(10)
+  final String? saleability;
 
   BookEntity({
     required this.bookID,
@@ -26,5 +34,38 @@ class BookEntity extends HiveObject {
     required this.description,
     required this.price,
     required this.rating,
+    required this.ratingsCount,
+    required this.category,
+    required this.previewLink,
+    required this.saleability,
   });
+
+  factory BookEntity.fromJson(Map<String, dynamic> json) {
+    final volumeInfo = json['volumeInfo'] ?? {};
+    final saleInfo = json['saleInfo'] ?? {};
+
+    return BookEntity(
+      bookID: json['id'] ?? '',
+      image: (volumeInfo['imageLinks'] != null)
+          ? volumeInfo['imageLinks']['thumbnail']
+          : null,
+      title: volumeInfo['title'] ?? 'Unknown Title',
+      authorName:
+          (volumeInfo['authors'] != null && volumeInfo['authors'] is List)
+              ? (volumeInfo['authors'] as List).join(', ')
+              : 'Unknown Author',
+      description: volumeInfo['description'],
+      price: saleInfo['retailPrice'] != null
+          ? saleInfo['retailPrice']['amount']
+          : null,
+      rating: volumeInfo['averageRating'],
+      ratingsCount: volumeInfo['ratingsCount'],
+      category:
+          (volumeInfo['categories'] != null && volumeInfo['categories'] is List)
+              ? (volumeInfo['categories'] as List).join(', ')
+              : null,
+      previewLink: volumeInfo['previewLink'],
+      saleability: saleInfo['saleability'],
+    );
+  }
 }

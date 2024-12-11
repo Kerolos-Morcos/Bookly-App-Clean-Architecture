@@ -1,17 +1,17 @@
-import 'package:bookly_app/core/models/book_model/book_model.dart';
-import 'package:bookly_app/features/search/data/repos/search_repo.dart';
+import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
+import 'package:bookly_app/features/search/domain/use_cases/search_books_result_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'search_book_state.dart';
 
 class SearchBookCubit extends Cubit<SearchBookState> {
-  SearchBookCubit(this.searchRepo) : super(SearchBookInitial());
-  final SearchRepo searchRepo;
+  SearchBookCubit(this.searchBooksResultUseCase) : super(SearchBookInitial());
+  final SearchBooksResultUseCase searchBooksResultUseCase;
 
-  Future fetchSearchBooksResult(BookModel bookName) async {
+  Future<void> fetchSearchBooksResult(String bookName) async {
     emit(SearchBooksLoading());
-    var result = await searchRepo.fetchSearchBooksResult(
-      bookName: bookName.volumeInfo.title!,
+    var result = await searchBooksResultUseCase.call(
+      bookName,
     );
     result.fold(
       (failure) => emit(

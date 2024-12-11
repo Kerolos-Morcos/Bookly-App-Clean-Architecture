@@ -1,15 +1,15 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/core/models/book_model/book_model.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/similar_list_view.dart';
+import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/similar_list_view_bloc_builder.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  final BookModel bookModel;
+  final BookEntity bookModel;
   const BookDetailsViewBody({super.key, required this.bookModel});
 
   @override
@@ -30,13 +30,13 @@ class BookDetailsViewBody extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: width * 0.26),
                 child: CustomBookImage(
                   aspectRatio: 1.70 / 2.5,
-                  imageURL: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                  imageURL: bookModel.image ??
                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp8tqoFKYU6xOKd9Vj9YB435sViW4g4RbR4g&s',
                 ),
               ),
               const SizedBox(height: 18),
               Text(
-                bookModel.volumeInfo.title ?? 'New Book',
+                bookModel.title,
                 style: Styles.titleLargeBold22.copyWith(
                   fontSize: 30,
                   fontFamily: kGTSectraFine,
@@ -46,7 +46,7 @@ class BookDetailsViewBody extends StatelessWidget {
               ),
               const SizedBox(height: 2),
               Text(
-                bookModel.volumeInfo.authors?[0] ?? 'Unknown Author',
+                bookModel.authorName ?? 'Unknown Author',
                 style: Styles.subTitleMedium18.copyWith(
                   color: Colors.grey,
                   fontStyle: FontStyle.italic,
@@ -55,8 +55,8 @@ class BookDetailsViewBody extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               BookRating(
-                count: bookModel.volumeInfo.ratingsCount ?? 0,
-                rating: bookModel.volumeInfo.averageRating ?? 0,
+                count: (bookModel.ratingsCount ?? 0).toInt(),
+                rating: (bookModel.rating ?? 0).toDouble(),
                 mainAxisAlignment: MainAxisAlignment.center,
               ),
               const SizedBox(height: 20),
@@ -85,7 +85,7 @@ class BookDetailsViewBody extends StatelessWidget {
               // Similar Books List
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24),
-                child: SimilarListView(),
+                child: SimilarListViewBlocBuilder(),
               ),
               const SizedBox(height: 20),
             ],
