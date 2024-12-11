@@ -17,11 +17,10 @@ class _BookDetailsViewState extends State<BookDetailsView> {
   @override
   void initState() {
     super.initState();
-    BlocProvider(
-      create: (context) => getIt.get<SimilarBooksCubit>()
-        ..fetchSimilarBooks(
-          category: widget.books.category ?? 'Unknown Category',
-        ),
+    final similarBooksCubit = SimilarBooksCubit(getIt.get());
+    similarBooksCubit.fetchSimilarBooks(category: widget.books.category!);
+    BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
+      category: widget.books.category!,
     );
   }
 

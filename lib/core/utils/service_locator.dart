@@ -4,6 +4,7 @@ import 'package:bookly_app/features/home/data/data_sources/home_local_data_sourc
 import 'package:bookly_app/features/home/data/data_sources/home_remote_data_source.dart';
 import 'package:bookly_app/features/home/domain/use_cases/fetch_featured_books_use_case.dart';
 import 'package:bookly_app/features/home/domain/use_cases/fetch_newest_books_use_case.dart';
+import 'package:bookly_app/features/home/domain/use_cases/fetch_similar_books_use_case.dart';
 import 'package:bookly_app/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly_app/features/search/data/repos/search_repo_implementation.dart';
 import 'package:bookly_app/features/search/domain/use_cases/search_books_result_use_case.dart';
@@ -53,7 +54,6 @@ void setupServiceLocator() {
       getIt.get<ApiService>(),
     ),
   );
-
   getIt.registerFactory<SearchBooksResultUseCase>(
     () => SearchBooksResultUseCase(
       getIt.get<SearchRepoImplementation>(),
@@ -62,7 +62,13 @@ void setupServiceLocator() {
 
   getIt.registerFactory<SimilarBooksCubit>(
     () => SimilarBooksCubit(
-      getIt.get<SearchBooksResultUseCase>(),
+      getIt.get<FetchSimilarBooksUseCase>(),
+    ),
+  );
+
+  getIt.registerSingleton<FetchSimilarBooksUseCase>(
+    FetchSimilarBooksUseCase(
+      getIt.get<HomeRepoImplementation>(),
     ),
   );
 }
