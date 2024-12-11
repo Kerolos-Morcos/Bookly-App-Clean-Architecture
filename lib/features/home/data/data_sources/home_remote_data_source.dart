@@ -33,13 +33,13 @@ class HomeRemoteDataSourceImplementation extends HomeRemoteDataSource {
   }
 
   @override
-  Future<List<BookEntity>> fetchSimilarBooks({required String category}) async{
+  Future<List<BookEntity>> fetchSimilarBooks({required String category}) async {
     final data = await apiService.get(
         endPoint: 'volumes?Filtering=free-ebooks&q=$category');
     List<BookEntity> books = getBooksList(data);
-    saveBooksData(books, kSimilarBox);
     return books;
   }
+
   List<BookEntity> getBooksList(Map<String, dynamic> data) {
     List<BookEntity> books = [];
     for (var item in data['items']) {
@@ -47,5 +47,4 @@ class HomeRemoteDataSourceImplementation extends HomeRemoteDataSource {
     }
     return books;
   }
-  
 }

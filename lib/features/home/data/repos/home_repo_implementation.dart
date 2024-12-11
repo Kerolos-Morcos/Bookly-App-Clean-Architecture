@@ -48,10 +48,6 @@ class HomeRepoImplementation extends HomeRepo {
       {required String category}) async {
     try {
       List<BookEntity> books;
-      books = homeLocalDataSource.fetchSimilarBooks();
-      if (books.isNotEmpty) {
-        return Right(books);
-      }
       books = await homeRemoteDataSource.fetchSimilarBooks(category: category);
       return Right(books);
     } catch (e) {
