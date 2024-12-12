@@ -40,10 +40,7 @@ class ServerFailure extends Failure {
         }
         return ServerFailure(
             errorMessage: 'Unexpected Error, please try again!');
-      default:
-        return ServerFailure(
-            errorMessage: 'An error occurred, please try again!');
-    }
+      }
   }
 
   factory ServerFailure.fromResponse(
