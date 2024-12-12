@@ -20,6 +20,7 @@ class NewestBooksItem extends StatelessWidget {
       child: SizedBox(
         height: MediaQuery.of(context).size.height * 0.20,
         child: Row(
+          spacing: 32,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             CustomBookImage(
@@ -27,9 +28,9 @@ class NewestBooksItem extends StatelessWidget {
               imageURL: bookModel!.image ??
                   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp8tqoFKYU6xOKd9Vj9YB435sViW4g4RbR4g&s',
             ),
-            const SizedBox(width: 32),
             Expanded(
               child: Column(
+                spacing: 3,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -41,7 +42,6 @@ class NewestBooksItem extends StatelessWidget {
                       fontFamily: kGTSectraFine,
                     ),
                   ),
-                  const SizedBox(height: 3),
                   Text(
                     bookModel?.authorName ?? 'UNknown author',
                     style: Styles.subTitleSmall17,
@@ -49,7 +49,6 @@ class NewestBooksItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
-                  const SizedBox(height: 3),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
