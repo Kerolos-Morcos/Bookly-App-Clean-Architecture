@@ -4,24 +4,7 @@
             "outputFile": "com.example.bookly_app-mergeDebugResources-26:/values-fa/values-fa.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Studio\\.gradle\\caches\\transforms-3\\55efd0e80dcd8584b0a3725bb1f49efc\\transformed\\core-1.13.1\\res\\values-fa\\values-fa.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,154,256,355,455,556,662,779",
-                        "endColumns": "98,101,98,99,100,105,116,100",
-                        "endOffsets": "149,251,350,450,551,657,774,875"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,13",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,154,256,355,455,556,662,1189",
-                        "endColumns": "98,101,98,99,100,105,116,100",
-                        "endOffsets": "149,251,350,450,551,657,774,1285"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Studio\\.gradle\\caches\\transforms-3\\f644b5ff29e703b230002bd77420bb8f\\transformed\\browser-1.8.0\\res\\values-fa\\values-fa.xml",
+                    "source": "C:\\Users\\Studio\\.gradle\\caches\\transforms-3\\009b03b27de3e690f8604be1eeb49944\\transformed\\browser-1.8.0\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -35,6 +18,23 @@
                         "startOffsets": "779,878,975,1086",
                         "endColumns": "98,96,110,102",
                         "endOffsets": "873,970,1081,1184"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Studio\\.gradle\\caches\\transforms-3\\45a4134f9c8c9963a2b9bda0208ec1b2\\transformed\\core-1.13.1\\res\\values-fa\\values-fa.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,154,256,355,455,556,662,779",
+                        "endColumns": "98,101,98,99,100,105,116,100",
+                        "endOffsets": "149,251,350,450,551,657,774,875"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,13",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,154,256,355,455,556,662,1189",
+                        "endColumns": "98,101,98,99,100,105,116,100",
+                        "endOffsets": "149,251,350,450,551,657,774,1285"
                     }
                 }
             ]
