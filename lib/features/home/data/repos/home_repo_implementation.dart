@@ -34,14 +34,19 @@ class HomeRepoImplementation extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() async {
+  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks(
+      {int pageNumber = 0}) async {
     try {
       List<BookEntity> books;
-      books = homeLocalDataSource.fetchNewestBooks();
+      books = homeLocalDataSource.fetchNewestBooks(
+        pageNumber: pageNumber,
+      );
       if (books.isNotEmpty) {
         return Right(books);
       }
-      books = await homeRemoteDataSource.fetchNewestBooks();
+      books = await homeRemoteDataSource.fetchNewestBooks(
+        pageNumber: pageNumber,
+      );
       return Right(books);
     } catch (e) {
       return Left(ServerFailure(errorMessage: e.toString()));
