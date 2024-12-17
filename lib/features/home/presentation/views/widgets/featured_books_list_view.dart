@@ -46,7 +46,9 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
 
   @override
   Widget build(BuildContext context) {
-    final reversedBooks = widget.books.reversed.toList();
+    // This line is commented out because it's not needed for the current implementation.
+    // it is for the case when the books are reversed.
+    // final reversedBooks = widget.books.reversed.toList();
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.33,
       child: ListView.builder(
@@ -58,16 +60,16 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(
-              right: index == reversedBooks.length - 1 ? 0 : 14.0,
+              right: index == widget.books.length - 1 ? 0 : 14.0,
             ),
             child: GestureDetector(
               onTap: () {
                 GoRouter.of(context).push(AppRouter.kBookDetailsView,
-                    extra: reversedBooks[index]);
+                    extra: widget.books[index]);
               },
               child: CustomBookImage(
                 aspectRatio: 1.70 / 2.5,
-                imageURL: reversedBooks[index].image ??
+                imageURL: widget.books[index].image ??
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp8tqoFKYU6xOKd9Vj9YB435sViW4g4RbR4g&s',
               ),
             ),
