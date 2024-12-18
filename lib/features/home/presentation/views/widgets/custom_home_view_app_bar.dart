@@ -12,7 +12,7 @@ class CustomHomeViewAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: 60,
+      toolbarHeight: 70,
       titleSpacing: 24,
       automaticallyImplyLeading: false,
       title: SvgPicture.asset(
