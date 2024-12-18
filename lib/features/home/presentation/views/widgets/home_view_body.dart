@@ -72,9 +72,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 5),
+                  SizedBox(height: 20),
                   FeaturedBooksListViewBlocConsumer(),
-                  SizedBox(height: 35),
+                  SizedBox(height: 50),
                   Text(
                     'Newest Books',
                     style: Styles.titleLargeBold22,
