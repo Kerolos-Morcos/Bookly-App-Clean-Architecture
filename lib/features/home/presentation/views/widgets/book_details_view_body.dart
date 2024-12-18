@@ -16,6 +16,7 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
+    bool isArabic = Localizations.localeOf(context).languageCode == 'ar';
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
@@ -75,7 +76,7 @@ class BookDetailsViewBody extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Align(
-                  alignment: Alignment.topRight,
+                  alignment: isArabic ? Alignment.topRight : Alignment.topLeft,
                   child: Text(
                     S.of(context).you_can_also_like,
                     style: Styles.subTitleSmall17.copyWith(

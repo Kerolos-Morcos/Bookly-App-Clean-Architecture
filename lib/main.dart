@@ -44,7 +44,7 @@ class BooklyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
-        locale: const Locale("ar"),
+        locale: const Locale("en"),
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
