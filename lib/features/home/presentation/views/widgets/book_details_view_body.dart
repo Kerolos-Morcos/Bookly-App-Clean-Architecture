@@ -6,6 +6,7 @@ import 'package:bookly_app/features/home/presentation/views/widgets/books_action
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/similar_list_view_bloc_builder.dart';
+import 'package:bookly_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -67,15 +68,16 @@ class BookDetailsViewBody extends StatelessWidget {
                   bookModel: bookModel,
                 ),
               ),
+              // End sBook's Action Buttons
               const Expanded(
                 child: SizedBox(height: 30),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Align(
-                  alignment: Alignment.topLeft,
+                  alignment: Alignment.topRight,
                   child: Text(
-                    'You can also like',
+                    S.of(context).you_can_also_like,
                     style: Styles.subTitleSmall17.copyWith(
                         color: Colors.white, fontWeight: FontWeight.w600),
                   ),

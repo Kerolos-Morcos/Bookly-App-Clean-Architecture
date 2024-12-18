@@ -28,6 +28,8 @@ environment:
 dependencies:
   cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.8
+  flutter_localizations:
+    sdk: flutter
   dartz: ^0.10.1
   dio: ^5.7.0
   flutter:
@@ -85,3 +87,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_intl:
+  enabled: true

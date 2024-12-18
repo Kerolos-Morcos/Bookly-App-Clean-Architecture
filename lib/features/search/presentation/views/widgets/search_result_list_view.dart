@@ -2,6 +2,7 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/core/utils/widgets/custom_error_widget.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_item.dart';
 import 'package:bookly_app/features/search/presentation/manager/search_a_book/search_book_cubit.dart';
+import 'package:bookly_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,9 +30,9 @@ class SearchResultListView extends StatelessWidget {
         } else if (state is SearchBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return const Center(
+          return Center(
             child: Text(
-              'No Results Found',
+              S.of(context).no_results_found,
               style: Styles.titleLargeBold22,
             ),
           );

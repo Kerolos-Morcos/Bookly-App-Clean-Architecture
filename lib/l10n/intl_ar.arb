@@ -1,0 +1,16 @@
+{
+    "@@locale": "ar",
+    "title": "بوكلي",
+    "newest_books": "أحدث الكتب",
+    "read_free_books": "اقرأ كتب بالمجان",
+    "search_for_books": "ابحث عن كتب ...",
+    "search_results": "نتائج البحث",
+    "no_results_found": "لم يتم العثور على نتائج",
+    "free": "مجاني",
+    "you_can_also_like": " يمكنك أن تحب أيضًا",
+    "free_preview": "معاينة مجانية",
+    "not_available": "المعاينة غير متوفرة",
+    "not_for_sale": "الكتاب ليس للبيع",
+    "for_sale": "متاح للبيع",
+    "unknown_saleability": "حالة البيع غير معروفة"
+}

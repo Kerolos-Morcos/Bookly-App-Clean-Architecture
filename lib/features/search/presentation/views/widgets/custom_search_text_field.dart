@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/search/presentation/manager/search_a_book/search_book_cubit.dart';
+import 'package:bookly_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,7 +23,7 @@ class CustomSearchTextField extends StatelessWidget {
       decoration: InputDecoration(
         enabledBorder: buildOutlinedInputBorder(),
         focusedBorder: buildOutlinedInputBorder(),
-        hintText: 'Search for books...',
+        hintText: S.of(context).search_for_books,
         suffixIcon: IconButton(
           onPressed: () {
             controller.clear();

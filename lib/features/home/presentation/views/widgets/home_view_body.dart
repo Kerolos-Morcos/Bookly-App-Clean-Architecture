@@ -3,6 +3,7 @@ import 'package:bookly_app/core/utils/widgets/custom_scroll_to_top_button.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/featured_books_list_view_bloc_consumer.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_list_view_bloc_consumer.dart';
+import 'package:bookly_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -67,23 +68,23 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           controller: scrollController,
           physics: const BouncingScrollPhysics(),
           clipBehavior: Clip.none,
-          slivers: const [
+          slivers: [
             SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 20),
-                  FeaturedBooksListViewBlocConsumer(),
-                  SizedBox(height: 50),
+                  const SizedBox(height: 20),
+                  const FeaturedBooksListViewBlocConsumer(),
+                  const SizedBox(height: 50),
                   Text(
-                    'Newest Books',
+                    S.of(context).newest_books,
                     style: Styles.titleLargeBold22,
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                 ],
               ),
             ),
-            NewestBooksListViewBlocConsumer(),
+            const NewestBooksListViewBlocConsumer(),
           ],
         ),
         CustomScrollToTopButton(

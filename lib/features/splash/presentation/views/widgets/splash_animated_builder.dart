@@ -1,3 +1,4 @@
+import 'package:bookly_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SplashAnimatedBuilder extends StatelessWidget {
@@ -15,9 +16,9 @@ class SplashAnimatedBuilder extends StatelessWidget {
         builder: (context, child) {
           return SlideTransition(
             position: slidingAnimation,
-            child: const Text(
-              'Read Free Books',
-              style: TextStyle(
+            child: Text(
+              S.of(context).read_free_books,
+              style: const TextStyle(
                 fontSize: 20,
               ),
               textAlign: TextAlign.center,
