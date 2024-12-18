@@ -24,7 +24,7 @@ class NewestBooksItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             CustomBookImage(
-              aspectRatio: 2.4 / 3.4,
+              aspectRatio: 2.3 / 3.3,
               imageURL: bookModel!.image ??
                   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp8tqoFKYU6xOKd9Vj9YB435sViW4g4RbR4g&s',
             ),

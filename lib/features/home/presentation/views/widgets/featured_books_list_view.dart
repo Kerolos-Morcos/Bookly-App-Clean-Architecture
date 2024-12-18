@@ -68,7 +68,7 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
                     extra: widget.books[index]);
               },
               child: CustomBookImage(
-                aspectRatio: 1.70 / 2.5,
+                aspectRatio: 1.60 / 2.5,
                 imageURL: widget.books[index].image ??
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp8tqoFKYU6xOKd9Vj9YB435sViW4g4RbR4g&s',
               ),
