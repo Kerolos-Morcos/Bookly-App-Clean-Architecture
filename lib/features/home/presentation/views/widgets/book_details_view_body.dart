@@ -1,4 +1,5 @@
 import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/utils/functions/get_current_localization.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
@@ -16,7 +17,6 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    bool isArabic = Localizations.localeOf(context).languageCode == 'ar';
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
@@ -76,7 +76,7 @@ class BookDetailsViewBody extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Align(
-                  alignment: isArabic ? Alignment.topRight : Alignment.topLeft,
+                  alignment: isArabic() ? Alignment.topRight : Alignment.topLeft,
                   child: Text(
                     S.of(context).you_can_also_like,
                     style: Styles.subTitleSmall17.copyWith(

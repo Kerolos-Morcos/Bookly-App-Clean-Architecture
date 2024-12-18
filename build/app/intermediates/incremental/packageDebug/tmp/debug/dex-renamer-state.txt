@@ -1,4 +1,4 @@
-#Wed Dec 18 17:37:58 EET 2024
+#Thu Dec 19 00:00:49 EET 2024
 base.0=F\:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=F\:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=F\:\\FlutterProjects\\3-Level_Three_Projects\\Bookly-App-Clean-Architecture\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

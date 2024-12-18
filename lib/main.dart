@@ -6,6 +6,7 @@ import 'package:bookly_app/features/home/data/repos/home_repo_implementation.dar
 import 'package:bookly_app/features/home/domain/use_cases/fetch_featured_books_use_case.dart';
 import 'package:bookly_app/features/home/domain/use_cases/fetch_newest_books_use_case.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/features/home/presentation/manager/language_cubit/language_cubit.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/core/utils/simple_bloc_observer.dart';
 import 'package:bookly_app/generated/l10n.dart';
@@ -17,7 +18,6 @@ import 'package:google_fonts/google_fonts.dart';
 void main() async {
   setupServiceLocator();
   Bloc.observer = SimpleBlocObserver();
-  WidgetsFlutterBinding.ensureInitialized();
   await hiveInitialization();
   runApp(const BooklyApp());
 }
@@ -42,27 +42,32 @@ class BooklyApp extends StatelessWidget {
             ),
           )..fetchNewestBooks(),
         ),
+        BlocProvider(create: (context) => LanguageCubit()),
       ],
-      child: MaterialApp.router(
-        locale: const Locale("en"),
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: S.delegate.supportedLocales,
-        routerConfig: AppRouter.router,
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: AppColors.kPrimaryColor,
-          appBarTheme: const AppBarTheme(
-            backgroundColor: AppColors.kPrimaryColor,
-          ),
-          textTheme:
-              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
-        ),
-        title: 'Bookly',
-        debugShowCheckedModeBanner: false,
+      child: BlocBuilder<LanguageCubit, Locale>(
+        builder: (context, locale) {
+          return MaterialApp.router(
+            locale: locale,
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            routerConfig: AppRouter.router,
+            theme: ThemeData.dark().copyWith(
+              scaffoldBackgroundColor: AppColors.kPrimaryColor,
+              appBarTheme: const AppBarTheme(
+                backgroundColor: AppColors.kPrimaryColor,
+              ),
+              textTheme:
+                  GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+            ),
+            title: 'Bookly',
+            debugShowCheckedModeBanner: false,
+          );
+        },
       ),
     );
   }

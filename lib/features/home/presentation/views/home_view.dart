@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/widgets/language_locale_toggle_button_widget.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_home_view_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class HomeView extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 24),
         child: HomeViewBody(),
       ),
+      floatingActionButton: const LanguageToggleButton(),
     );
   }
 }
