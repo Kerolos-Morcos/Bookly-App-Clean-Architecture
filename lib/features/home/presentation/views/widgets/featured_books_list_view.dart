@@ -50,7 +50,7 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
     // it is for the case when the books are reversed.
     // final reversedBooks = widget.books.reversed.toList();
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.33,
+      height: MediaQuery.of(context).size.height * 0.31,
       child: ListView.builder(
         controller: scrollController,
         clipBehavior: Clip.none,
