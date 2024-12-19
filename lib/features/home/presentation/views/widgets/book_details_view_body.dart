@@ -34,8 +34,12 @@ class BookDetailsViewBody extends StatelessWidget {
           hasScrollBody: false,
           child: BlocBuilder<GoogleTranslationCubit, Map<String, String>>(
             builder: (context, state) {
-              String translatedTitle = state[bookModel.title] ?? bookModel.title;
-              String translatedAuthorName = state[bookModel.authorName ?? 'Unknown author'] ?? bookModel.authorName ?? 'Unknown author';
+              String translatedTitle =
+                  state[bookModel.title] ?? bookModel.title;
+              String translatedAuthorName =
+                  state[bookModel.authorName ?? 'Unknown author'] ??
+                      bookModel.authorName ??
+                      'Unknown author';
               return Column(
                 children: [
                   const Padding(

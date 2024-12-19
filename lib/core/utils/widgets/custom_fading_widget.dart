@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomFadingWidget extends StatefulWidget {
-  const CustomFadingWidget({super.key, required this.child, required this.duration});
+  const CustomFadingWidget(
+      {super.key, required this.child, required this.duration});
   final Widget child;
   final int duration;
   @override
