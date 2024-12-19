@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomFadingWidget extends StatefulWidget {
-  const CustomFadingWidget({super.key, required this.child});
+  const CustomFadingWidget({super.key, required this.child, required this.duration});
   final Widget child;
+  final int duration;
   @override
   State<CustomFadingWidget> createState() => _CustomFadingWidgetState();
 }
@@ -15,8 +16,8 @@ class _CustomFadingWidgetState extends State<CustomFadingWidget>
   void initState() {
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(
-        milliseconds: 600,
+      duration: Duration(
+        milliseconds: widget.duration,
       ),
     );
     animation =

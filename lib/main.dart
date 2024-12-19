@@ -6,6 +6,7 @@ import 'package:bookly_app/features/home/data/repos/home_repo_implementation.dar
 import 'package:bookly_app/features/home/domain/use_cases/fetch_featured_books_use_case.dart';
 import 'package:bookly_app/features/home/domain/use_cases/fetch_newest_books_use_case.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/features/home/presentation/manager/google_translation_cubit/google_translation_cubit.dart';
 import 'package:bookly_app/features/home/presentation/manager/language_cubit/language_cubit.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/core/utils/simple_bloc_observer.dart';
@@ -43,6 +44,7 @@ class BooklyApp extends StatelessWidget {
           )..fetchNewestBooks(),
         ),
         BlocProvider(create: (context) => LanguageCubit()),
+        BlocProvider(create: (context) => GoogleTranslationCubit()),
       ],
       child: BlocBuilder<LanguageCubit, Locale>(
         builder: (context, locale) {

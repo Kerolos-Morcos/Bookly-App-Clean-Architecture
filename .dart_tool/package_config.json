@@ -656,6 +656,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "translator",
+      "rootUri": "file:///C:/Users/Studio/AppData/Local/Pub/Cache/hosted/pub.dev/translator-1.0.3+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "typed_data",
       "rootUri": "file:///C:/Users/Studio/AppData/Local/Pub/Cache/hosted/pub.dev/typed_data-1.4.0",
       "packageUri": "lib/",
@@ -794,7 +800,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-12-18T02:17:26.405308Z",
+  "generated": "2024-12-18T23:32:11.570468Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///C:/flutter",

@@ -8,6 +8,7 @@ class LoadingIndicatorFadingFeaturedListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomFadingWidget(
+      duration: 600,
       child: SizedBox(
         height: MediaQuery.of(context).size.height * 0.33,
         child: ListView.builder(
